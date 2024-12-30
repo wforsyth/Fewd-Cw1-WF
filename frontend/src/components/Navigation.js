@@ -21,12 +21,12 @@ const Navigation = () => {
               <a href="/" className="nav-item nav-link active">
                   Home
                 </a>
-                <a href="/aboutus" className="nav-item nav-link">
-                  About
-                </a>
-                <a href="/register" className="nav-item nav-link">
-                  Register
-                </a>     
+                <a href="/talks" className="nav-item nav-link">
+                  Talks
+                </a> 
+                <a href="/search" className="nav-item nav-link">
+                  Search
+                </a>    
             </div>
             <div className="border-start ps-4 d-none d-lg-block">
               <button type="button" className="btn btn-sm p-0">

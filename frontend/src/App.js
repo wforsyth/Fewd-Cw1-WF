@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import Home from "./components/Home";
 import Navigation from "./components/Navigation";
-import Register from "./components/Register";
+import TalkList from "./components/TalkList"
 
 function App() {
   return (
@@ -15,8 +15,8 @@ function App() {
         <Navigation />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path ="/register" element={<Register />} />
+            <Route path='/' element={<Home />} />
+            <Route path='/talks' element={<TalkList />} />
           </Routes>
         </BrowserRouter>
       </div>

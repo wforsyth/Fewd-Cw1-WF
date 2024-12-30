@@ -11,7 +11,7 @@ const Home = () => {
         <p>This is the website for the Technology Conference 2024.</p>
         <p>This webpage provides useful information about the conference such as  guest speakers, talk information, times, and sessions!</p>
           <p>Use this website to create your personal itinerary and search for talks you may be interested in.</p>
-          <p>We look forward to greeting you, register to start now! </p> 
+          <p>We look forward to greeting you! </p> 
          </div>
         </div>
       </div>
