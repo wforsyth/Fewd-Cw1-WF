@@ -20,7 +20,7 @@ const useFetchData = () => {
       .then((response) => response.json())
       .then((incomingData) => {
         console.log(incomingData)
-        setFoods(incomingData);
+        setTalks(incomingData);
         setStatus('fetched');
       })
       .catch((err) => console.error(err));
