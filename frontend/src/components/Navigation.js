@@ -1,4 +1,6 @@
 import React from "react";
+import 'bootstrap/dist/js/bootstrap.js';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Navigation = () => {
   return (
@@ -22,14 +24,8 @@ const Navigation = () => {
                 <a href="/aboutus" className="nav-item nav-link">
                   About
                 </a>
-                <a href="/order" className="nav-item nav-link">
-                  Order
-                </a>
-                <a href="/contactus" className="nav-item nav-link">
-                  Contact
-                </a>
-                <a href="/staff" className="nav-item nav-link">
-                  Staff
+                <a href="/register" className="nav-item nav-link">
+                  Register
                 </a>     
             </div>
             <div className="border-start ps-4 d-none d-lg-block">

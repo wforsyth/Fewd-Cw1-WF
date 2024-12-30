@@ -7,13 +7,11 @@ const Home = () => {
     return (
       <div className="container-fluid">
         <div className="row">
-        <div className="col"><h3>Who we are...</h3>
-        <p>We are a small local chain of cafes specialising in simple, wholesome, locally sourced dishes.</p>
-        <p>A homegrown business, we proved so popular we outgrew our original location and expanded to meet demand. Increased size means we can offer even better value across the Central belt.</p>
-          <p>We take pride in providing straightforward, good value food.</p>
-          <p>This branch was the first to open in 2016. Since then we have expanded to three other locations - all providing freshly cooked, locally sourced food. We aim to be as sustainable as possible. </p> 
-          <p> We are especially proud of our absolutely delicious traditional Italian dishes! Super fresh and indulgent. </p>
-          <p> Not to mention our fabulous friendly staff - we look forward to welcoming you soon.</p>
+        <div className="col"><h3>Welcome!</h3>
+        <p>This is the website for the Technology Conference 2024.</p>
+        <p>This webpage provides useful information about the conference such as  guest speakers, talk information, times, and sessions!</p>
+          <p>Use this website to create your personal itinerary and search for talks you may be interested in.</p>
+          <p>We look forward to greeting you, register to start now! </p> 
          </div>
         </div>
       </div>
