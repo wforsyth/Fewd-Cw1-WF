@@ -1,3 +1,31 @@
+html, body{
+  scroll-behavior: smooth;
+}
+
+.first-row{
+  background-image: url(img/background.png);
+  color: white;
+  text-align: center;
+}
+
+.first-row p{
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+  font-weight: bold;
+}
+
+.second-row{
+  background-color: white;
+  color: black;
+}
+
+.welcome-message{
+  font-size: 4.5rem;
+  font-weight: bold;
+  margin-top: 30px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
 .App {
   text-align: center;
 }

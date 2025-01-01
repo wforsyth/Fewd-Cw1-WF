@@ -21,11 +21,8 @@ const Navigation = () => {
               <a href="/" className="nav-item nav-link active">
                   Home
                 </a>
-                <a href="/talks" className="nav-item nav-link">
-                  Talks
-                </a> 
                 <a href="/search" className="nav-item nav-link">
-                  Search
+                  Talks
                 </a>    
             </div>
             <div className="border-start ps-4 d-none d-lg-block">

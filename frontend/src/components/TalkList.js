@@ -1,31 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import { Accordion } from 'react-bootstrap';
-import StyledItem from './StyledTalk';
+import React from 'react';
+import Accordion from 'react-bootstrap/Accordion';
+import useFetchData from './useFetchData';  
+import StyledItem from './StyledTalk';      
 
 const TalkList = () => {
-  const [talks, setTalks] = useState([]);
-  const [error, setError] = useState(null);
+  const { status, talks } = useFetchData();  
 
-  useEffect(() => {
-    // Fetch the conference data from the backend
-    fetch('http://localhost:3001/talks')
-      .then((response) => response.json())
-      .then((data) => setTalks(data))  // Store the data in state
-      .catch((err) => setError('Failed to fetch talks'));
-  }, []);
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
 
-  if (error) {
-    return <div>{error}</div>;
+  if (status === 'error') {
+    return <div>Failed to load talks. Please try again later.</div>;
   }
 
   return (
-    <Accordion>
-      {talks.map((talk, index) => (
-        <Accordion.Item eventKey={index} key={index}>
-          <StyledItem item={talk} index={index} />
-        </Accordion.Item>
-      ))}
-    </Accordion>
+    <div>
+      <h1>Talk List</h1>
+      <Accordion>
+        {talks.map((talk, index) => (
+          <Accordion.Item eventKey={index} key={talk._id}>
+            <StyledItem item={talk} index={index} /> 
+          </Accordion.Item>
+        ))}
+      </Accordion>
+    </div>
   );
 };
 

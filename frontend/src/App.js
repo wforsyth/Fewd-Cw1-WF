@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import Home from "./components/Home";
 import Navigation from "./components/Navigation";
-import TalkList from "./components/TalkList"
+import Search from "./components/Search";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/talks' element={<TalkList />} />
+            <Route path='/search' element={<Search />} />
           </Routes>
         </BrowserRouter>
       </div>
