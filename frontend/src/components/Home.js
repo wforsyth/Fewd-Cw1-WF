@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import useFetchData from "./useFetchData";
+import ChosenSpeaker from "./ChosenSpeaker";
+import GuestSpeakers from "./GuestSpeakers";
 import "../App.css";
 
 const Home = () => {
@@ -22,35 +24,15 @@ const Home = () => {
             <p>We look forward to greeting you! </p> 
           </div>
 
-          <div className="row justify-content-center second-row">
-            <div className="col-md-8 col-lg-6 py-4">
-              <h4>Guest Speakers</h4>
-              <ul>
-                {speakers.map((speaker, index) => (
-                  <li
-                  key={index}
-                  onClick={() => setChosenSpeaker(speaker)}
-                  style={{cursor: 'pointer'}}
-                  > {speaker}
-                  </li>
-                ))} 
-              </ul>
-            </div>
-          </div>
+          <GuestSpeakers speakers={speakers} setChosenSpeaker={setChosenSpeaker} />
 
-          <div className="row justify-content-center second-row">
-            <div className="col-md-8 col-lg-6 py-4">
-              <h5>Talks by {chosenSpeaker}</h5>
-              <ul>
-                {filteredTalks.map((talk, index) => ( 
-                  <li key={index}>
-                    <strong>{talk.title}</strong>
-                    <p>{talk.session}</p>
-                    <p>{talk.time}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        </div>
+        <div className="row justify-content-center third-row">
+          <div className="col-md-8 col-lg-6">
+            <h3>Talks by {chosenSpeaker ? chosenSpeaker: "select a speaker"}</h3>
+            {chosenSpeaker && (
+              <ChosenSpeaker chosenSpeaker={chosenSpeaker} filteredTalks={filteredTalks} />
+            )}
           </div>
         </div>
       </div>
