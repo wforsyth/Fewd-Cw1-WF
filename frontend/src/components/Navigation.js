@@ -23,7 +23,10 @@ const Navigation = () => {
                 </a>
                 <a href="/search" className="nav-item nav-link">
                   Talks
-                </a>    
+                </a>
+                <a href="/schedule" className="nav-item nav-link">
+                  Personal Schedule
+                </a>     
             </div>
             <div className="border-start ps-4 d-none d-lg-block">
               <button type="button" className="btn btn-sm p-0">

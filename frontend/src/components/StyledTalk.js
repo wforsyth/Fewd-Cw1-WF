@@ -1,7 +1,8 @@
 import React from "react";
 import Accordion from "react-bootstrap/Accordion";
+import Checkbox from "./Checkbox";
 
-const StyledItem = ({ item,index }) => {
+const StyledItem = ({ item,index,onToggleInterest,isInterested }) => {
   return (
     <>
      <Accordion.Header> {item.title}</Accordion.Header>
@@ -12,6 +13,11 @@ const StyledItem = ({ item,index }) => {
         <p><strong>Time:</strong> {item.time}</p>
         <p><strong>Tags:</strong> {item.tags.join(", ")}</p>
         <p><strong>Ratings:</strong> {item.ratings.join(", ")}</p>
+
+        <Checkbox 
+        isChecked={isInterested}
+        onToggle={() => onToggleInterest(item)}
+        />
       </Accordion.Body>
     </>
   );
