@@ -4,11 +4,11 @@ import Checkbox from "./Checkbox";
 import StarRating from "./Stars";
 
 const StyledItem = ({ item, index, onToggleInterest, isInterested }) => {
-  const [userRating, setUserRating] = useState(item.userRating || 0);
+  const [userRating, setUserRating] = useState(0);
 
   const handleRating = (rating) => {
     setUserRating(rating);
-    item.userRating = rating;
+    item.ratings.push(rating);
   };
 
   return (
