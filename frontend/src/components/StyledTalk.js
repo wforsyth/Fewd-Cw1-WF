@@ -1,7 +1,6 @@
 import React from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Checkbox from "./Checkbox";
-import "../App.css";
 
 const StyledItem = ({ item,index,onToggleInterest,isInterested }) => {
   return (
