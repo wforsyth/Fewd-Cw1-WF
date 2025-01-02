@@ -2,10 +2,12 @@ import React, {useState} from "react";
 import StyledItem from "./StyledTalk";
 import useFetchData from "./useFetchData";
 import Accordion from 'react-bootstrap/Accordion';
+import { useLocalStorage } from "./useLocalStorage";
 
 function Search(){
     const { status, talks } = useFetchData();  
     const [searchField, setSearchField] = useState("");
+    const [interestedTalks, setInterestedTalks] = useLocalStorage('interestedTalks', []);
 
     const filteredTalks = talks.filter((talk) => {
         return(
@@ -13,6 +15,14 @@ function Search(){
             talk.session.toLowerCase().includes(searchField.toLowerCase())
         );
     });
+
+    const toggleInterest = (talk) => {
+        if (interestedTalks.includes(talk._id)){
+          setInterestedTalks(interestedTalks.filter((t) => t !== talk._id));
+        } else{
+          setInterestedTalks([...interestedTalks, talk._id])
+        }
+      }
 
     if (status === 'loading') {
         return <div>Loading...</div>;
@@ -35,7 +45,7 @@ function Search(){
             <Accordion>
                 {filteredTalks.map((talk, index) => (
                 <Accordion.Item eventKey={index} key={talk._id}>
-                    <StyledItem item={talk} index={index} /> 
+                    <StyledItem item={talk} index={index} onToggleInterest={() => toggleInterest(talk)} isInterested={interestedTalks.includes(talk._id)} /> 
                 </Accordion.Item>
                 ))}
             </Accordion>

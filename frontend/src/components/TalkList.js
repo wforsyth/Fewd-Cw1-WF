@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import useFetchData from './useFetchData';  
-import StyledItem from './StyledTalk';      
+import StyledItem from './StyledTalk';  
+import { useLocalStorage } from './useLocalStorage';    
 
 const TalkList = () => {
   const { status, talks } = useFetchData();
   
-  const [interestedTalks, setInterestedTalks] = useState([]);
+  const [interestedTalks, setInterestedTalks] = useLocalStorage('interestedTalks', []);
 
   const toggleInterest = (talk) => {
     if (interestedTalks.includes(talk._id)){
@@ -30,7 +31,7 @@ const TalkList = () => {
       <Accordion>
         {talks.map((talk, index) => (
           <Accordion.Item eventKey={index} key={talk._id}>
-            <StyledItem item={talk} index={index} onToggleInterest={toggleInterest} isInterested={interestedTalks.includes(talk._id)} /> 
+            <StyledItem item={talk} index={index} onToggleInterest={() => toggleInterest(talk)} isInterested={interestedTalks.includes(talk._id)} /> 
           </Accordion.Item>
         ))}
       </Accordion>

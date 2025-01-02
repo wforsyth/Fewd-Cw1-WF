@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./components/Home";
 import Navigation from "./components/Navigation";
 import Search from "./components/Search";
+import Schedule from "./components/Schedule";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/search' element={<Search />} />
+            <Route path='/schedule' element={<Schedule />} />
           </Routes>
         </BrowserRouter>
       </div>
