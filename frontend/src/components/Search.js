@@ -8,11 +8,13 @@ function Search() {
     const { status, talks } = useFetchData();
     const [searchField, setSearchField] = useState("");
     const [interestedTalks, setInterestedTalks] = useLocalStorage('interestedTalks', []);
+    const [selectedSession, setSelectedSession] = useState("");
+    const sessions = [...new Set(talks.map((talk) => talk.session))];
 
     const filteredTalks = talks.filter((talk) => {
         return (
-            talk.speaker.toLowerCase().includes(searchField.toLowerCase()) ||
-            talk.session.toLowerCase().includes(searchField.toLowerCase())
+            talk.speaker.toLowerCase().includes(searchField.toLowerCase()) &&
+            (selectedSession === "" || talk.session === selectedSession)
         );
     });
 
@@ -38,9 +40,17 @@ function Search() {
                 <input
                     className="form-control"
                     type="text"
-                    placeholder="Search by speaker or session ..."
+                    placeholder="Search by speaker or ..."
                     onChange={(e) => setSearchField(e.target.value)}
                 />
+            </div>
+            <div className="mb-4">
+                <select className="form-select" value={selectedSession} onChange={(e) => setSelectedSession(e.target.value)}>
+                    <option value="">All Sessions</option>
+                    {sessions.map((session, index) => (
+                        <option key={index} value={session}>{session}</option>
+                    ))}
+                </select>
             </div>
             <Accordion>
                 {filteredTalks.map((talk, index) => (
