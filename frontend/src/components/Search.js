@@ -39,10 +39,11 @@ function Search() {
         <>
             <div className="container py-4">
                 <div className="mb-4">
+                    <h1>Talks</h1>
                     <input
                         className="form-control"
                         type="text"
-                        placeholder="Search by speaker or ..."
+                        placeholder="Search by speaker ..."
                         onChange={(e) => setSearchField(e.target.value)}
                     />
                 </div>
