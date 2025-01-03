@@ -3,7 +3,7 @@ import "../App.css";
 
 const Footer = () => {
     return (
-        <footer className="bg-dark text-light py-3 mt-4">
+        <footer className="bg-dark text-light py-3">
             <div className="container-fluid text-center">
                 <p>&copy; 2024 Technology Conference. All rights reserved.</p>
                 <ul className="list-inline">

@@ -25,9 +25,8 @@ const Home = () => {
           </div>
           <GuestSpeakers speakers={speakers} setChosenSpeaker={setChosenSpeaker} />
         </div>
-        <div className="divider my-4"></div>
-        <div className="row justify-content-center third-row">
-          <div className="col-md-8 col-lg-6">
+        <div className="row justify-content-center third-row bg-secondary bg-opacity-10">
+          <div className="py-4">
             <h3>Talks by {chosenSpeaker ? chosenSpeaker: "select a speaker ..."}</h3>
             {chosenSpeaker && (
               <ChosenSpeaker chosenSpeaker={chosenSpeaker} filteredTalks={filteredTalks} />
