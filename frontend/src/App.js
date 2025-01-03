@@ -8,11 +8,12 @@ import Home from "./components/Home";
 import Navigation from "./components/Navigation";
 import Search from "./components/Search";
 import Schedule from "./components/Schedule";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
-      <div className="wrapper">
+      <div className="wrapper d-flex flex-column min-vh-100">
         <Navigation />
         <BrowserRouter>
           <Routes>
@@ -22,6 +23,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </div>
+      <Footer />
     </>
   );
 }
