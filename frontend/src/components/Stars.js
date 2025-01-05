@@ -10,10 +10,7 @@ const StarRating = ({ onRate, userRating }) => {
   return (
     <div>
       {[1, 2, 3, 4, 5].map((star) => (
-        <span
-          key={star}
-          style={{ cursor: "pointer", color: star <= (hoverRating || userRating) ? "#ffd700" : "#ccc" }}
-          onClick={() => handleClick(star)} 
+        <span key={star} style={{ cursor: "pointer", color: star <= (hoverRating || userRating) ? "#ffd700" : "#ccc" }} onClick={() => handleClick(star)} 
           onMouseEnter={() => setHoverRating(star)} 
           onMouseLeave={() => setHoverRating(0)} 
         >
