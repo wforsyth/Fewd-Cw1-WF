@@ -6,10 +6,10 @@ import { useLocalStorage } from './useLocalStorage';
 
 const Schedule = () => {
     const { status, talks } = useFetchData();
-
     const [interestedTalks, setInterestedTalks] = useLocalStorage('interestedTalks', []);
 
     const toggleInterest = (talk) => {
+
         if (interestedTalks.includes(talk._id)) {
             setInterestedTalks(interestedTalks.filter((t) => t !== talk._id));
         } else {

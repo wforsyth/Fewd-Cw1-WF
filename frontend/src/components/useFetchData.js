@@ -1,18 +1,18 @@
-import  { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 const useFetchData = () => {
-    const [status, setStatus] = useState('idle');
-    const [talks, setTalks]=useState([{
-        id:"",
-        speaker:"",
-        title:"",
-        description:"",
-        session:"",
-        time:"",
-        tags:[],
-        ratings:[],
-        _id:"",
-      }]);
+  const [status, setStatus] = useState('idle');
+  const [talks, setTalks] = useState([{
+    id: "",
+    speaker: "",
+    title: "",
+    description: "",
+    session: "",
+    time: "",
+    tags: [],
+    ratings: [],
+    _id: "",
+  }]);
 
   const fetchData = useCallback(() => {
     const url = "http://localhost:3001/talks";

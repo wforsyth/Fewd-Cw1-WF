@@ -5,9 +5,9 @@ export default function StarRating({ position, totalStars = 5 }) {
 
   const createArray = length => [...Array(length)];
   let positionInMenu = JSON.stringify(position);
-  const [selectedStars, setSelectedStars] =  useLocalStorage( positionInMenu, 3);
+  const [selectedStars, setSelectedStars] = useLocalStorage(positionInMenu, 3);
 
-  
+
 
   return (
     <div>

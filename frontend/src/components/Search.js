@@ -19,12 +19,25 @@ function Search() {
         );
     });
 
+    const timeConflict = (talkTime) => {
+        return interestedTalks.some(talkId => {
+            const talk = talks.find(t => t._id === talkId);
+            return talk && talk.time === talkTime;
+        });
+    }
+
     const toggleInterest = (talk) => {
-        if (interestedTalks.includes(talk._id)) {
-            setInterestedTalks(interestedTalks.filter((t) => t !== talk._id));
+
+        if (timeConflict(talk.time)) {
+            alert("Cannot have two talks happening at the same time in Personal Schedule")
         } else {
-            setInterestedTalks([...interestedTalks, talk._id])
+            if (interestedTalks.includes(talk._id)) {
+                setInterestedTalks(interestedTalks.filter((t) => t !== talk._id));
+            } else {
+                setInterestedTalks([...interestedTalks, talk._id])
+            }
         }
+
     }
 
     if (status === 'loading') {

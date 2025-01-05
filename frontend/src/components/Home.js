@@ -5,13 +5,13 @@ import GuestSpeakers from "./GuestSpeakers";
 import "../App.css";
 
 const Home = () => {
-    const {status, talks} = useFetchData();
-    const [chosenSpeaker, setChosenSpeaker] = useState(null);
+  const { status, talks } = useFetchData();
+  const [chosenSpeaker, setChosenSpeaker] = useState(null);
 
-    const speakers = [...new Set(talks.map(talk => talk.speaker))]
-    const filteredTalks = talks.filter(talk => talk.speaker === chosenSpeaker)
+  const speakers = [...new Set(talks.map(talk => talk.speaker))]
+  const filteredTalks = talks.filter(talk => talk.speaker === chosenSpeaker)
 
-    if (status==='fetched')
+  if (status === 'fetched')
 
     return (
       <div className="container-fluid">
@@ -21,21 +21,21 @@ const Home = () => {
             <p>This is the website for the Technology Conference 2024.</p>
             <p>This webpage provides useful information about the conference such as  guest speakers, talk information, times, and sessions!</p>
             <p>Use this website to create your personal itinerary and search for talks you may be interested in.</p>
-            <p>We look forward to greeting you! </p> 
+            <p>We look forward to greeting you! </p>
           </div>
           <GuestSpeakers speakers={speakers} setChosenSpeaker={setChosenSpeaker} />
         </div>
         <div className="row justify-content-center third-row bg-secondary bg-opacity-10">
           <div className="py-4">
-            <h3>Talks by {chosenSpeaker ? chosenSpeaker: "select a speaker ..."}</h3>
+            <h3>Talks by {chosenSpeaker ? chosenSpeaker : "select a speaker ..."}</h3>
             {chosenSpeaker && (
               <ChosenSpeaker chosenSpeaker={chosenSpeaker} filteredTalks={filteredTalks} />
             )}
           </div>
         </div>
       </div>
-      
+
     );
-  };
-  
-  export default Home;
+};
+
+export default Home;

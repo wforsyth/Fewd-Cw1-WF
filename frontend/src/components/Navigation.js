@@ -17,16 +17,16 @@ const Navigation = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <div className="navbar-nav ms-auto">
-   
+
               <a href="/" className="nav-item nav-link active">
-                  Home
-                </a>
-                <a href="/search" className="nav-item nav-link">
-                  Talks
-                </a>
-                <a href="/schedule" className="nav-item nav-link">
-                  Personal Schedule
-                </a>     
+                Home
+              </a>
+              <a href="/search" className="nav-item nav-link">
+                Talks
+              </a>
+              <a href="/schedule" className="nav-item nav-link">
+                Personal Schedule
+              </a>
             </div>
             <div className="border-start ps-4 d-none d-lg-block">
               <button type="button" className="btn btn-sm p-0">
