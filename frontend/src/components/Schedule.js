@@ -28,22 +28,28 @@ const Schedule = () => {
     }
 
     return (
-        <>
+        <div className='container-fluid bg-secondary bg-opacity-10'>
             <div className='container py-4'>
                 <div className='mb-4'>
                     <div>
                         <h1>Personal Schedule</h1>
-                        <Accordion>
-                            {interestedTalkDetails.map((talk, index) => (
-                                <Accordion.Item eventKey={index} key={talk._id}>
-                                    <StyledItem item={talk} index={index} onToggleInterest={() => toggleInterest(talk)} isInterested={interestedTalks.includes(talk._id)} />
-                                </Accordion.Item>
-                            ))}
-                        </Accordion>
+                        {interestedTalkDetails.length === 0 ? (
+                            <div>
+                                You have no talks selected yet!
+                            </div>
+                        ) : (
+                            <Accordion>
+                                {interestedTalkDetails.map((talk, index) => (
+                                    <Accordion.Item eventKey={index} key={talk._id}>
+                                        <StyledItem item={talk} index={index} onToggleInterest={() => toggleInterest(talk)} isInterested={interestedTalks.includes(talk._id)} />
+                                    </Accordion.Item>
+                                ))}
+                            </Accordion>
+                        )}
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

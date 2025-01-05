@@ -36,7 +36,7 @@ function Search() {
     }
 
     return (
-        <>
+        <div className="container-fluid bg-secondary bg-opacity-10">
             <div className="container py-4">
                 <div className="mb-4">
                     <h1>Talks</h1>
@@ -63,7 +63,8 @@ function Search() {
                     ))}
                 </Accordion>
             </div>
-        </>
+        </div>
+
 
     )
 }
