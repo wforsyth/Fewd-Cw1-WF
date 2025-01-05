@@ -1,21 +1,15 @@
-import React, { useState } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Checkbox from "./Checkbox";
 import StarRating from "./Stars";
 
 const StyledItem = ({ item, index, onToggleInterest, isInterested }) => {
-  const [userRating, setUserRating] = useState(0);
 
-  const averageRatingCalculator = (ratings) =>{
+  const averageRatingCalculator = (ratings) => {
     const sum = ratings.reduce((acc, rating) => acc + rating, 0);
-    return (sum/ratings.length).toFixed(1);
+    return (sum / ratings.length).toFixed(1);
   }
 
   const averageRating = averageRatingCalculator(item.ratings);
-
-  const handleRating = (rating) =>{
-    setUserRating(rating);
-  }
 
   return (
     <>
@@ -32,7 +26,7 @@ const StyledItem = ({ item, index, onToggleInterest, isInterested }) => {
           <strong>
             Your Rating:
           </strong>
-          <StarRating userRating={userRating} onRate={handleRating}/>
+          <StarRating position={index} />
         </div>
 
         <div className="mt-4">

@@ -1,24 +1,26 @@
-import React, { useState } from "react";
+import Star from "./Star";
+import { useLocalStorage } from "./useLocalStorage";
 
-const StarRating = ({ onRate, userRating }) => {
-  const [hoverRating, setHoverRating] = useState(0); 
+export default function StarRating({ position, totalStars = 5 }) {
 
-  const handleClick = (rating) => {
-    onRate(rating);
-  };
+  const createArray = length => [...Array(length)];
+  let positionInMenu = JSON.stringify(position);
+  const [selectedStars, setSelectedStars] =  useLocalStorage( positionInMenu, 3);
+
+  
 
   return (
     <div>
-      {[1, 2, 3, 4, 5].map((star) => (
-        <span key={star} style={{ cursor: "pointer", color: star <= (hoverRating || userRating) ? "#ffd700" : "#ccc" }} onClick={() => handleClick(star)} 
-          onMouseEnter={() => setHoverRating(star)} 
-          onMouseLeave={() => setHoverRating(0)} 
-        >
-          ★
-        </span>
+      {createArray(totalStars).map((n, i) => (
+        <Star
+          key={i}
+          selected={selectedStars > i}
+          onSelect={() => setSelectedStars(i + 1)}
+        />
       ))}
+      <p>
+        {selectedStars} of {totalStars} are selected.
+      </p>
     </div>
   );
-};
-
-export default StarRating;
+}
