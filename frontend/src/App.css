@@ -47,7 +47,6 @@ html, body{
   margin-left: 10px;
   border: 2px solid #ccc;
   border-radius: 5px;
-  background-color: #f9f9f9;
   transition: background-color 0.3s ease, border-color 0.3s ease;
   text-align: center;
 }
@@ -55,13 +54,6 @@ html, body{
 .speaker-item:hover {
   background-color: #e2e2e2;
   border-color: #333;
-}
-
-.divider {
-  border: 0;
-  height: 1px;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
-  margin: 20px 0;
 }
 
 .App {
