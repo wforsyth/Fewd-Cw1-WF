@@ -1,4 +1,4 @@
-# Fewd-Cw2-WF
+# Fewd-Cw1-WF
 
 A web application for a technology conference that allows users to view available talks and create a personal schedule.
 
